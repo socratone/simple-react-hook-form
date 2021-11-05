@@ -8,6 +8,7 @@ import RelativeValidate from './pages/RelativeValidate';
 import DatePicker from './pages/DatePicker';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import CustomValidate from './pages/CustomValidate';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Link to="/validate">Validate</Link>
             <Link to="/touched">TouchedValidate</Link>
             <Link to="/relative">RelativeValidate</Link>
-            <Link to="/datepicker">DatePicker</Link>
+            <Link to="/date_picker">DatePicker</Link>
+            <Link to="/custom_validate">CustomValidate</Link>
           </Nav>
 
           <Switch>
@@ -39,8 +41,11 @@ function App() {
             <Route path="/relative">
               <RelativeValidate />
             </Route>
-            <Route path="/datepicker">
+            <Route path="/date_picker">
               <DatePicker />
+            </Route>
+            <Route path="/custom_validate">
+              <CustomValidate />
             </Route>
           </Switch>
         </Container>
