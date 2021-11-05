@@ -5,38 +5,47 @@ import Controller from './pages/Controller';
 import Validate from './pages/Validate';
 import TouchedValidate from './pages/TouchedValidate';
 import RelativeValidate from './pages/RelativeValidate';
+import DatePicker from './pages/DatePicker';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 function App() {
   return (
-    <Router>
-      <Container>
-        <Nav>
-          <Link to="/basic">Basic</Link>
-          <Link to="/controller">Controller</Link>
-          <Link to="/validate">Validate</Link>
-          <Link to="/touched">TouchedValidate</Link>
-          <Link to="/relative">RelativeValidate</Link>
-        </Nav>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <Router>
+        <Container>
+          <Nav>
+            <Link to="/basic">Basic</Link>
+            <Link to="/controller">Controller</Link>
+            <Link to="/validate">Validate</Link>
+            <Link to="/touched">TouchedValidate</Link>
+            <Link to="/relative">RelativeValidate</Link>
+            <Link to="/datepicker">DatePicker</Link>
+          </Nav>
 
-        <Switch>
-          <Route path="/basic">
-            <Basic />
-          </Route>
-          <Route path="/controller">
-            <Controller />
-          </Route>
-          <Route path="/validate">
-            <Validate />
-          </Route>
-          <Route path="/touched">
-            <TouchedValidate />
-          </Route>
-          <Route path="/relative">
-            <RelativeValidate />
-          </Route>
-        </Switch>
-      </Container>
-    </Router>
+          <Switch>
+            <Route path="/basic">
+              <Basic />
+            </Route>
+            <Route path="/controller">
+              <Controller />
+            </Route>
+            <Route path="/validate">
+              <Validate />
+            </Route>
+            <Route path="/touched">
+              <TouchedValidate />
+            </Route>
+            <Route path="/relative">
+              <RelativeValidate />
+            </Route>
+            <Route path="/datepicker">
+              <DatePicker />
+            </Route>
+          </Switch>
+        </Container>
+      </Router>
+    </LocalizationProvider>
   );
 }
 
